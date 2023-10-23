@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load socialaccount %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Django Sign in</title>
+</head>
+<body>
+
+<h2>Google and Facebook Login</h2>
+
+{% if user.is_authenticated %}
+<div class="test">
+    <p>Welcome {{ user.username }}</p>
+    <a href="{% url 'logout_view' %}">Logout</a>
+</div>
+{% else %}
+<a href="{% provider_login_url 'google' %}?next=/">Login With Google</a> <br>
+
+<a href="{% provider_login_url 'facebook' %}?next=/">Login With Facebook</a>
+
+{% endif %}
+
+
+</body>
+</html>
