@@ -24,7 +24,6 @@
 
    ```bash
    git clone https://github.com/Hant0-0/auth-and-team-api.git
-   cd repo/
 
 2. Встановіть всі залежності
     
